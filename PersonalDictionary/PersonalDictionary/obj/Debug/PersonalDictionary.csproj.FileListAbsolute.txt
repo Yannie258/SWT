@@ -1,0 +1,17 @@
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\bin\Debug\PersonalDictionary.exe.config
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\bin\Debug\PersonalDictionary.exe
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\bin\Debug\PersonalDictionary.pdb
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.csprojAssemblyReference.cache
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.Form1.resources
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.Properties.Resources.resources
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.csproj.GenerateResource.cache
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.csproj.CoreCompileInputs.cache
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.exe
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.pdb
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\bin\Debug\SqlHelper.dll
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.csproj.CopyComplete
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.ManagementData.resources
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.MainForm.resources
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\Interop.SpeechLib.dll
+C:\Users\coanh\OneDrive\Documents\SWT\Beleg\PersonalDictionary\PersonalDictionary\obj\Debug\PersonalDictionary.csproj.ResolveComReference.cache
