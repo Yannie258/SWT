@@ -1,6 +1,6 @@
 ﻿namespace PersonalDictionary
 {
-    partial class Form1
+    partial class Start
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
             this.LoginGrpBox = new System.Windows.Forms.GroupBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
@@ -85,6 +86,7 @@
             // 
             // txb_pass
             // 
+            this.txb_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txb_pass.Location = new System.Drawing.Point(328, 120);
             this.txb_pass.Name = "txb_pass";
             this.txb_pass.PasswordChar = '*';
@@ -93,6 +95,7 @@
             // 
             // txb_usr
             // 
+            this.txb_usr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.txb_usr.Location = new System.Drawing.Point(328, 48);
             this.txb_usr.Name = "txb_usr";
             this.txb_usr.Size = new System.Drawing.Size(393, 44);
@@ -136,6 +139,7 @@
             // 
             this.btn_search.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_search.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btn_search.Location = new System.Drawing.Point(45, 186);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(346, 67);
@@ -148,6 +152,7 @@
             // 
             this.btn_Management.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_Management.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Management.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btn_Management.Location = new System.Drawing.Point(624, 186);
             this.btn_Management.Name = "btn_Management";
             this.btn_Management.Size = new System.Drawing.Size(339, 67);
@@ -156,7 +161,7 @@
             this.btn_Management.UseVisualStyleBackColor = false;
             this.btn_Management.Click += new System.EventHandler(this.btnManagement_Click);
             // 
-            // Form1
+            // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,8 +171,10 @@
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.btn_Management);
             this.Controls.Add(this.LoginGrpBox);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Start";
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Start_FormClosing);
             this.LoginGrpBox.ResumeLayout(false);
             this.LoginGrpBox.PerformLayout();
             this.ResumeLayout(false);

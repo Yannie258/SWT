@@ -26,7 +26,7 @@ namespace PersonalDictionary
             try
             {
                 //load Items von Database to Listbox
-                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.str, "select_dict").Tables[0];
+                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "select_dict").Tables[0];
                lbItem.DataSource = dt;
                 lbItem.DisplayMember = "German";
                 lbItem.ValueMember = "ID";
@@ -42,7 +42,7 @@ namespace PersonalDictionary
             {
                 string german = txbSearch.Text;
                 // gefundene Wort wurde in einem temperatoren Table und in Textbox anzeigen
-                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.str, "Lookup_dict", german).Tables[0];
+                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", german).Tables[0];
                 // testen, ob diese Worte in Datenbank existiert
                 if (dt.Rows.Count > 0)
                 {
@@ -68,7 +68,7 @@ namespace PersonalDictionary
                 //temp enthaelt Item, wenn User das clickt
                 string temp = lbItem.Text;
                 //ID Wert nach German->muss noch ein Store erzeugen um zu verweisen
-                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.str, "Lookup_dict",temp).Tables[0];
+                DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict",temp).Tables[0];
                 txbSearch.Text = temp;
                 if (dt.Rows.Count > 0)
                 {
@@ -105,6 +105,18 @@ namespace PersonalDictionary
         {
             SpVoice speak_d = new SpVoice();
             speak_d.Speak(txbDetail.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+        }
+
+       
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Do you really want to close the Program?", "", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
     }
 }

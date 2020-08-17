@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementData));
             this.gbManagement = new System.Windows.Forms.GroupBox();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -43,6 +44,10 @@
             this.ID_lbl = new System.Windows.Forms.Label();
             this.AvailableListWord = new System.Windows.Forms.GroupBox();
             this.gridItemData = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.German = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VNLong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbManagement.SuspendLayout();
             this.AvailableListWord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemData)).BeginInit();
@@ -50,6 +55,9 @@
             // 
             // gbManagement
             // 
+            this.gbManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbManagement.Controls.Add(this.btn_Edit);
             this.gbManagement.Controls.Add(this.btn_Delete);
             this.gbManagement.Controls.Add(this.btn_Update);
@@ -62,7 +70,6 @@
             this.gbManagement.Controls.Add(this.lbl_Meaning);
             this.gbManagement.Controls.Add(this.lbl_German);
             this.gbManagement.Controls.Add(this.ID_lbl);
-            this.gbManagement.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbManagement.Location = new System.Drawing.Point(0, 0);
             this.gbManagement.Name = "gbManagement";
             this.gbManagement.Size = new System.Drawing.Size(1127, 374);
@@ -72,9 +79,9 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(691, 144);
+            this.btn_Edit.Location = new System.Drawing.Point(857, 144);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(92, 29);
+            this.btn_Edit.Size = new System.Drawing.Size(85, 47);
             this.btn_Edit.TabIndex = 4;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
@@ -82,9 +89,9 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(855, 65);
+            this.btn_Delete.Location = new System.Drawing.Point(979, 53);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(92, 29);
+            this.btn_Delete.Size = new System.Drawing.Size(92, 48);
             this.btn_Delete.TabIndex = 4;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -92,9 +99,9 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(855, 144);
+            this.btn_Update.Location = new System.Drawing.Point(979, 144);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(92, 29);
+            this.btn_Update.Size = new System.Drawing.Size(92, 47);
             this.btn_Update.TabIndex = 4;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
@@ -102,9 +109,9 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(691, 65);
+            this.btn_Add.Location = new System.Drawing.Point(857, 53);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(92, 29);
+            this.btn_Add.Size = new System.Drawing.Size(85, 48);
             this.btn_Add.TabIndex = 4;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -112,10 +119,13 @@
             // 
             // txb_Details
             // 
+            this.txb_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txb_Details.Location = new System.Drawing.Point(242, 251);
             this.txb_Details.Multiline = true;
             this.txb_Details.Name = "txb_Details";
-            this.txb_Details.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txb_Details.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txb_Details.Size = new System.Drawing.Size(858, 117);
             this.txb_Details.TabIndex = 3;
             // 
@@ -142,6 +152,9 @@
             // 
             // lbl_Details
             // 
+            this.lbl_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Details.AutoSize = true;
             this.lbl_Details.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_Details.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,6 +167,9 @@
             // 
             // lbl_Meaning
             // 
+            this.lbl_Meaning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Meaning.AutoSize = true;
             this.lbl_Meaning.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_Meaning.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,6 +182,9 @@
             // 
             // lbl_German
             // 
+            this.lbl_German.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_German.AutoSize = true;
             this.lbl_German.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_German.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,15 +220,52 @@
             // 
             // gridItemData
             // 
+            this.gridItemData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridItemData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridItemData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridItemData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridItemData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.German,
+            this.VNShort,
+            this.VNLong});
             this.gridItemData.Location = new System.Drawing.Point(3, 22);
             this.gridItemData.Name = "gridItemData";
             this.gridItemData.RowHeadersWidth = 62;
             this.gridItemData.RowTemplate.Height = 28;
+            this.gridItemData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridItemData.Size = new System.Drawing.Size(1121, 295);
             this.gridItemData.TabIndex = 0;
             this.gridItemData.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridItemData_RowEnter);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            // 
+            // German
+            // 
+            this.German.DataPropertyName = "German";
+            this.German.HeaderText = "German";
+            this.German.MinimumWidth = 8;
+            this.German.Name = "German";
+            // 
+            // VNShort
+            // 
+            this.VNShort.DataPropertyName = "German";
+            this.VNShort.HeaderText = "VNShort";
+            this.VNShort.MinimumWidth = 8;
+            this.VNShort.Name = "VNShort";
+            // 
+            // VNLong
+            // 
+            this.VNLong.DataPropertyName = "VNLong";
+            this.VNLong.HeaderText = "VNLong";
+            this.VNLong.MinimumWidth = 8;
+            this.VNLong.Name = "VNLong";
             // 
             // ManagementData
             // 
@@ -218,8 +274,9 @@
             this.ClientSize = new System.Drawing.Size(1127, 700);
             this.Controls.Add(this.AvailableListWord);
             this.Controls.Add(this.gbManagement);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagementData";
-            this.Text = "ManagementData";
+            this.Text = "Personal Dictionary";
             this.gbManagement.ResumeLayout(false);
             this.gbManagement.PerformLayout();
             this.AvailableListWord.ResumeLayout(false);
@@ -245,5 +302,9 @@
         private System.Windows.Forms.Label lbl_Meaning;
         private System.Windows.Forms.Label lbl_German;
         private System.Windows.Forms.Label ID_lbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn German;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VNShort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VNLong;
     }
 }

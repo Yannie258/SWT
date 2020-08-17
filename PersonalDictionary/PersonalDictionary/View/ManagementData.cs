@@ -13,6 +13,7 @@ namespace PersonalDictionary
 {
     public partial class ManagementData : Form
     {
+        //Enums
         public ManagementData()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace PersonalDictionary
                 string details = txb_Details.Text;
 
                 //uebermitteln zum SQL mit Hilfe von SqlHelper
-                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.str, "add_dict", id, german, meaning, details);
+                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "add_dict", id, german, meaning, details);
                 MessageBox.Show("Add Successful!");
                
 
@@ -44,7 +45,7 @@ namespace PersonalDictionary
 
         private void loadData()
         {
-            gridItemData.DataSource = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.str, "select_dict").Tables[0];
+            gridItemData.DataSource = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "select_dict").Tables[0];
         }
 
         
@@ -78,9 +79,11 @@ namespace PersonalDictionary
             try
             {
                 string id = txb_ID.Text;
-                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.str, "Delete_dict", id);
-                
-            }catch (Exception ex)
+                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "Delete_dict", id);
+                MessageBox.Show("Delete Successful!");
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -94,8 +97,8 @@ namespace PersonalDictionary
                 string german = txb_German.Text;
                 string meaning = txb_Meaning.Text;
                 string details = txb_Details.Text;
-                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.str, "Edit_dict", id, german, meaning, details);
-               
+                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "Edit_dict", id, german, meaning, details);
+                MessageBox.Show("Edit Successful!");
             }
             catch (Exception ex)
             {

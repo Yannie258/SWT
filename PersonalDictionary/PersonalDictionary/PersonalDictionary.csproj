@@ -52,22 +52,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controller\DataController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Model\Column.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\IMainModel.cs" />
+    <Compile Include="View\Data.cs" />
+    <Compile Include="View\Datacontroller.cs" />
+    <Compile Include="Controller\Control.cs" />
+    <Compile Include="View\SQLConnect.cs" />
+    <Compile Include="View\Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagementData.cs">
+    <Compile Include="View\ManagementData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagementData.Designer.cs">
+    <Compile Include="View\ManagementData.Designer.cs">
       <DependentUpon>ManagementData.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -77,14 +86,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SQLdata.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Model\SQLdata.cs" />
+    <EmbeddedResource Include="View\Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagementData.resx">
+    <EmbeddedResource Include="View\ManagementData.resx">
       <DependentUpon>ManagementData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,6 +137,12 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\38px-Speaker_Icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Dictionary-512.ico" />
+    <Content Include="Resources\dp_logo.png" />
+    <Content Include="Resources\glossy-speaker-icon.jpg" />
+    <Content Include="Resources\management.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

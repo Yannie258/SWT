@@ -31,6 +31,7 @@
             this.gbx_List = new System.Windows.Forms.GroupBox();
             this.lbItem = new System.Windows.Forms.ListBox();
             this.gbx_Details = new System.Windows.Forms.GroupBox();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.btnSpeaker = new System.Windows.Forms.Button();
             this.btnLookup = new System.Windows.Forms.Button();
             this.lblDetail = new System.Windows.Forms.Label();
@@ -40,8 +41,6 @@
             this.txbDetail = new System.Windows.Forms.TextBox();
             this.txbMean = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.spkmean = new System.Windows.Forms.Button();
-            this.spkdetail = new System.Windows.Forms.Button();
             this.gbx_List.SuspendLayout();
             this.gbx_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,8 +70,7 @@
             // 
             // gbx_Details
             // 
-            this.gbx_Details.Controls.Add(this.spkdetail);
-            this.gbx_Details.Controls.Add(this.spkmean);
+            this.gbx_Details.Controls.Add(this.btnQuit);
             this.gbx_Details.Controls.Add(this.btnSpeaker);
             this.gbx_Details.Controls.Add(this.btnLookup);
             this.gbx_Details.Controls.Add(this.lblDetail);
@@ -83,6 +81,7 @@
             this.gbx_Details.Controls.Add(this.txbMean);
             this.gbx_Details.Controls.Add(this.pictureBox1);
             this.gbx_Details.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbx_Details.ForeColor = System.Drawing.Color.Purple;
             this.gbx_Details.Location = new System.Drawing.Point(324, 0);
             this.gbx_Details.Name = "gbx_Details";
             this.gbx_Details.Size = new System.Drawing.Size(791, 690);
@@ -90,12 +89,23 @@
             this.gbx_Details.TabStop = false;
             this.gbx_Details.Text = "Search";
             // 
+            // btnQuit
+            // 
+            this.btnQuit.BackColor = System.Drawing.Color.Cyan;
+            this.btnQuit.Location = new System.Drawing.Point(644, 149);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(74, 29);
+            this.btnQuit.TabIndex = 6;
+            this.btnQuit.Text = "Exit";
+            this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // btnSpeaker
             // 
             this.btnSpeaker.Image = global::PersonalDictionary.Properties.Resources._38px_Speaker_Icon2;
             this.btnSpeaker.Location = new System.Drawing.Point(499, 79);
             this.btnSpeaker.Name = "btnSpeaker";
-            this.btnSpeaker.Size = new System.Drawing.Size(47, 57);
+            this.btnSpeaker.Size = new System.Drawing.Size(80, 45);
             this.btnSpeaker.TabIndex = 5;
             this.btnSpeaker.UseVisualStyleBackColor = true;
             this.btnSpeaker.Click += new System.EventHandler(this.btnSpeaker_Click);
@@ -104,7 +114,7 @@
             // 
             this.btnLookup.BackColor = System.Drawing.Color.Cyan;
             this.btnLookup.ForeColor = System.Drawing.Color.Purple;
-            this.btnLookup.Location = new System.Drawing.Point(580, 94);
+            this.btnLookup.Location = new System.Drawing.Point(644, 79);
             this.btnLookup.Name = "btnLookup";
             this.btnLookup.Size = new System.Drawing.Size(74, 30);
             this.btnLookup.TabIndex = 4;
@@ -162,7 +172,7 @@
             this.txbDetail.Multiline = true;
             this.txbDetail.Name = "txbDetail";
             this.txbDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txbDetail.Size = new System.Drawing.Size(402, 347);
+            this.txbDetail.Size = new System.Drawing.Size(664, 347);
             this.txbDetail.TabIndex = 2;
             // 
             // txbMean
@@ -185,26 +195,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // spkmean
-            // 
-            this.spkmean.Image = global::PersonalDictionary.Properties.Resources._38px_Speaker_Icon2;
-            this.spkmean.Location = new System.Drawing.Point(499, 164);
-            this.spkmean.Name = "spkmean";
-            this.spkmean.Size = new System.Drawing.Size(47, 55);
-            this.spkmean.TabIndex = 6;
-            this.spkmean.UseVisualStyleBackColor = true;
-            this.spkmean.Click += new System.EventHandler(this.spkmean_Click);
-            // 
-            // spkdetail
-            // 
-            this.spkdetail.Image = global::PersonalDictionary.Properties.Resources._38px_Speaker_Icon2;
-            this.spkdetail.Location = new System.Drawing.Point(499, 307);
-            this.spkdetail.Name = "spkdetail";
-            this.spkdetail.Size = new System.Drawing.Size(47, 60);
-            this.spkdetail.TabIndex = 7;
-            this.spkdetail.UseVisualStyleBackColor = true;
-            this.spkdetail.Click += new System.EventHandler(this.spkdetail_Click);
             // 
             // MainForm
             // 
@@ -238,7 +228,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lbItem;
         private System.Windows.Forms.Button btnSpeaker;
-        private System.Windows.Forms.Button spkdetail;
-        private System.Windows.Forms.Button spkmean;
+        private System.Windows.Forms.Button btnQuit;
     }
 }
