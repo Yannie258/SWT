@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PersonalDictionary.Model
 {
-    public  interface IMainModel
+    interface IDataDictionary
     {
-         void Search();
-        void ShowManagement();
-        
+       
+
     }
 }

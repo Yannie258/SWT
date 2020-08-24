@@ -8,24 +8,25 @@ using System.Threading.Tasks;
 
 namespace PersonalDictionary.Controller
 {
-    class UserController:Control
+    class UserController 
     {
         //ein Objekt von LoginData erzeugen
-        LoginModel log = new LoginModel();
+        LoginModels log = new LoginModels();
 
-
-        /* Implementieren abstract Methode von Control Klasse
-         * abstrakten Methode überschreiben. 
-         */
-        public override void Search()
+        //Erfassen  die Anforderung des Benutzers und bezieht es sich auf das LoginModels, um dem Benutzer die Daten zurueckzugeben
+        public void SearchModus()
         {
-            log.Search();
+            log.SearchModus();
         }
-       
+        //public void ShowManagement()
+        //{
+        //    log.ShowManagementModus();
 
-        public override void ShowManagement()
+        //}
+        public bool ManagementModus(string user, string pass)
         {
-            log.ShowManagement();
+            
+            return log.checkLogin(user,pass);
         }
     }
 }

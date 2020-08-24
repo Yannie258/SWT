@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonalDictionary
 {
-    public  class SQLdata
+    public class SQLdata
     {
-        //Vervendung  SQLHelper Bibliothek
-        //Zeichenketten sind noetig
+        
+        //Path zur Datenbank
         public static string sql = @"server=DESKTOP-2RGH5S5;database=DictionaryData;integrated security =true";
-        //public abstract void getUser(string username, string pass);
+       
+       
+        
+       
+
     }
 }

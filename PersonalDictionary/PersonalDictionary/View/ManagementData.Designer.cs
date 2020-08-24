@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementData));
             this.gbManagement = new System.Windows.Forms.GroupBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.gbManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbManagement.Controls.Add(this.btnBack);
             this.gbManagement.Controls.Add(this.btn_Edit);
             this.gbManagement.Controls.Add(this.btn_Delete);
             this.gbManagement.Controls.Add(this.btn_Update);
@@ -76,6 +78,16 @@
             this.gbManagement.TabIndex = 0;
             this.gbManagement.TabStop = false;
             this.gbManagement.Text = "Add New Word";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(707, 103);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(72, 51);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btn_Edit
             // 
@@ -306,5 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn German;
         private System.Windows.Forms.DataGridViewTextBoxColumn VNShort;
         private System.Windows.Forms.DataGridViewTextBoxColumn VNLong;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -9,30 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.ApplicationBlocks.Data;
+using PersonalDictionary.Controller;
 namespace PersonalDictionary
 {
     public partial class ManagementData : Form
     {
         //Enums
+       
         public ManagementData()
         {
             InitializeComponent();
             //automatisch Data einladen , wenn Form fortfuehrt
             loadData();
         }
-
+        ControllerData cd = new ControllerData();
         private void btn_Add_Click(object sender, EventArgs e)
         {
             try
             {
                 //Variablen deklarieren (ID,German, Meaning, Details)
-                string id = txb_ID.Text;
+                int id = int.Parse(txb_ID.Text);
                 string german = txb_German.Text;
                 string meaning = txb_Meaning.Text;
                 string details = txb_Details.Text;
 
                 //uebermitteln zum SQL mit Hilfe von SqlHelper
-                SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "add_dict", id, german, meaning, details);
+                //SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "add_dict", id, german, meaning, details);
+                cd.Add(id, german, meaning, details);
                 MessageBox.Show("Add Successful!");
                
 
@@ -109,6 +112,15 @@ namespace PersonalDictionary
         private void btn_Update_Click(object sender, EventArgs e)
         {
             loadData();
+        }
+        
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            
+            cd.Back();
+            this.Hide();
+
+
         }
     }
 }

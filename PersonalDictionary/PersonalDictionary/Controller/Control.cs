@@ -13,6 +13,12 @@ namespace PersonalDictionary.DataController
         //void Login(string username, string pass);
        public abstract void Search();
        public abstract void ShowManagement();
+
+        public abstract bool checkLogin(string user, string pass);
+
+
+      
+
     }
         
 } 

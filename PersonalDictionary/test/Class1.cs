@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalDictionary.DataController
+namespace test
 {
-    public abstract class Datacontroller 
+    public class Class1
     {
-
     }
 }
