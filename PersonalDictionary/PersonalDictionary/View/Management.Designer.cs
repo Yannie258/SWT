@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementData));
             this.gbManagement = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.gbManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbManagement.Controls.Add(this.btnSearch);
             this.gbManagement.Controls.Add(this.btnBack);
             this.gbManagement.Controls.Add(this.btn_Edit);
             this.gbManagement.Controls.Add(this.btn_Delete);
@@ -74,16 +76,28 @@
             this.gbManagement.Controls.Add(this.ID_lbl);
             this.gbManagement.Location = new System.Drawing.Point(0, 0);
             this.gbManagement.Name = "gbManagement";
-            this.gbManagement.Size = new System.Drawing.Size(1127, 374);
+            this.gbManagement.Size = new System.Drawing.Size(1127, 618);
             this.gbManagement.TabIndex = 0;
             this.gbManagement.TabStop = false;
             this.gbManagement.Text = "Add New Word";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSearch.Image = global::PersonalDictionary.Properties.Resources.Search_512;
+            this.btnSearch.Location = new System.Drawing.Point(666, 128);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(74, 44);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(707, 103);
+            this.btnBack.Location = new System.Drawing.Point(979, 197);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(72, 51);
+            this.btnBack.Size = new System.Drawing.Size(92, 48);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -91,7 +105,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(857, 144);
+            this.btn_Edit.Location = new System.Drawing.Point(857, 125);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(85, 47);
             this.btn_Edit.TabIndex = 4;
@@ -111,7 +125,7 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(979, 144);
+            this.btn_Update.Location = new System.Drawing.Point(979, 128);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(92, 47);
             this.btn_Update.TabIndex = 4;
@@ -138,7 +152,7 @@
             this.txb_Details.Multiline = true;
             this.txb_Details.Name = "txb_Details";
             this.txb_Details.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txb_Details.Size = new System.Drawing.Size(858, 117);
+            this.txb_Details.Size = new System.Drawing.Size(858, 361);
             this.txb_Details.TabIndex = 3;
             // 
             // txb_Meaning
@@ -223,7 +237,7 @@
             // 
             this.AvailableListWord.Controls.Add(this.gridItemData);
             this.AvailableListWord.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AvailableListWord.Location = new System.Drawing.Point(0, 380);
+            this.AvailableListWord.Location = new System.Drawing.Point(0, 624);
             this.AvailableListWord.Name = "AvailableListWord";
             this.AvailableListWord.Size = new System.Drawing.Size(1127, 320);
             this.AvailableListWord.TabIndex = 1;
@@ -283,12 +297,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 700);
+            this.ClientSize = new System.Drawing.Size(1127, 944);
             this.Controls.Add(this.AvailableListWord);
             this.Controls.Add(this.gbManagement);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagementData";
             this.Text = "Personal Dictionary";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagementData_FormClosing);
             this.gbManagement.ResumeLayout(false);
             this.gbManagement.PerformLayout();
             this.AvailableListWord.ResumeLayout(false);
@@ -319,5 +334,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VNShort;
         private System.Windows.Forms.DataGridViewTextBoxColumn VNLong;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

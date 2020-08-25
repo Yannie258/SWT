@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.ApplicationBlocks.Data;
-using PersonalDictionary.DataController;
+//using PersonalDictionary.DataController;
 
 using PersonalDictionary.Controller;
 

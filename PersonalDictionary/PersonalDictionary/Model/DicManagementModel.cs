@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace PersonalDictionary.Model
 {
-    public class DicManagementModel /*:DictionaryDataManagementBase*/
+    public class DicManagementModel :DictionaryDataManagementBase,IDataAccess
     {
         public int Id { get; set; }
-        public string German { get; set; }
+       
         public string VNShort { get; set; }
         public string VNLong { get; set; }
 
@@ -24,53 +24,60 @@ namespace PersonalDictionary.Model
             this.VNShort = vnShort;
             this.VNLong = vnLong;
         }
-        public void back()
-        {
-            Start start = new Start();
-            start.Show();
-        }
 
-        public bool Add(int Id, string German, string VNShort, string VNLong)
+        public override DataTable Load_data()
         {
-            bool re = false;
-            try
-            {
-               int query= SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, "add_dict", Id, German, VNShort, VNLong);
-               if(query > 0)
-                {
-                    re = true;
-                }
+            DataTable re;
 
-            }
-            catch { re = false; }
+            string tp = TableProcedure.select_dict.ToString();
+            //alle Daten  in Temperate DataTable re abgespeichert.
+            // public static DataSet ExecuteDataset(string connectionString, string spName (sp:stored procedure), params object[] parameterValues);
+            re = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, tp).Tables[0];
             return re;
         }
+        //Fuehren Insert Query in SQL aus
+       
+        public override DataTable Load_to_TextBox(string german)
+        {
+            throw new NotImplementedException();
+        }
 
-        //public override DataTable Load_data()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override DataTable Search(string sql, string table, string searchLetter)
+        {
+            DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, table, searchLetter).Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            dt = null;
 
-        //public override string getGerman()
+            return dt;
+        }
+        //public void AddData(int ID, string German, string Mean, string Detail)
         //{
-        //    return German;
+        //    SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, TableProcedure.add_dict.ToString(), ID, German, Mean, Detail);
+
         //}
+        public void AddData(string sql,string table,int ID, string German, string Mean, string Detail)
+        {
+            
+            SqlHelper.SqlHelper.ExecuteNonQuery(sql,table,ID, German, Mean, Detail);
+
+            
+        }
+
+
+        public void DeleteData(string table, int id)
+        {
+            SqlHelper.SqlHelper.ExecuteNonQuery(SQLdata.sql, table,id);
+        }
+
+        public void EditData(string sql, string table, int ID, string German, string Mean, string Detail)
+        {
+            
+            SqlHelper.SqlHelper.ExecuteNonQuery(sql,table,ID,German,Mean,Detail);
+        }
 
         
-
-        //public override DataTable Load_to_TextBox(string german)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override string getMean(string mean)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override string getDetail(string s)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

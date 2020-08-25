@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PersonalDictionary
 {
     static class Program
@@ -16,7 +17,7 @@ namespace PersonalDictionary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start()); //open Start Form zuerst
+            Application.Run(new ManagementData()); //open Start Form zuerst
         }
     }
 }

@@ -52,15 +52,15 @@ namespace TestDictionary
         public void NotFoundGermanToVN()
         {
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", "Danke").Tables[0];
-            DataTable dt = dsm.Search("Lookup_dict", "Danken", "VNShort");
+            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_dict", "Danken");
             Assert.IsNull(dt);
         }
         [Test]
         public void SearchVNToGerman()
         {
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", "Danke").Tables[0];
-            DataTable dt = dsm.Search("Lookup_back", "Xin chào", "German");
-            Assert.IsTrue(dt.Rows.Count > 0);
+            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_back", "Xin chào");
+            Assert.IsNull(dt);
         }
         [Test]
         public void NotFoundVNToGerman()

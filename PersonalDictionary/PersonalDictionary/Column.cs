@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalDictionary.Model
+namespace PersonalDictionary
 {
     public enum Column
     {
-        Id,
+        ID,
         German,
         VNShort,
         VNLong
+
     }
 }

@@ -33,26 +33,14 @@ namespace PersonalDictionary
 
         //wenn MainForm geoefnet ist, werden Data in ListBox auch geloadet (WordList anzeigen)
         #region Load to ListBox
-        //Enumeration Columnname in Database
-        private enum Column
-        {
-            ID,
-            German,
-            VNShort,
-            VNLong
-        };
-        private enum TableProcedure
-        {
-            select_dict,
-            Lookup_dict,
-            Lookup_back
-        };
+       
+       
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             //nur German visible
             //load Items von Database to Listbox
-
+            setButtonLoadData();
             try
             {
                 //Verweisen mit Controller Objekt
@@ -63,7 +51,7 @@ namespace PersonalDictionary
                 lbItem.DataSource = dt;
                 lbItem.DisplayMember = column.ToString();
                 //Suchen Button deaktiviert wenn User nicht in TextBox schreibt
-                setButtonLoadData();
+                
             }
             catch (Exception ex)
             {
@@ -78,6 +66,7 @@ namespace PersonalDictionary
         #region Load to Textbox
         private void lbItem_Click(object sender, EventArgs e)
         {
+            setButtonLoadData();
             //temp enthaelt Item, wenn User an ListBox clickt, werden Data in TextBox ausgezeigt
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", temp).Tables[0];
             DataTable dt = cs.LoadDataToTextBox(lbItem.Text);
@@ -112,7 +101,7 @@ namespace PersonalDictionary
             string mean = Column.VNShort.ToString();
             string detail = Column.VNLong.ToString();
             //rufen in Proc Lookup_dict ab
-            DataTable re=cs.SearchVNFromGerman(TableProcedure.Lookup_dict.ToString(), german, mean);
+            DataTable re=cs.SearchVNFromGerman(SQLdata.sql,TableProcedure.Lookup_dict.ToString(), german);
             try
             {
                 if (re != null) //wenn ein Ergebnis gefunden ist, zeigt die Bedeutungen und Kontext
@@ -131,36 +120,6 @@ namespace PersonalDictionary
 
                 MessageBox.Show("Error DataSystemConnection");
             }
-           
-            // string mean = txbMean.Text;
-            // string detail = txbDetail.Text;
-            // // gefundene Wort wurde in einem temperatoren Table und in Textbox anzeigen
-            //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", german).Tables[0];
-
-            // //try 
-            // //{      // testen, ob diese Worte in Datenbanktable existiert   
-            // //    bool prep = cs.SearchGerman(txbSearch.Text, txbMean.Text, txbDetail.Text);
-            // //    if(prep == true)
-            // //    {
-
-            // //    }
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    txbMean.Text = dt.Rows[0]["VNShort"].ToString();
-            //    txbDetail.Text = dt.Rows[0]["VNLong"].ToString();
-            //}
-            //// //    //else
-            // //    //{
-            // //    //    MessageBox.Show("Not exists in WordList. You should create new one!");
-            // //    //}
-            // //}
-            // //catch // (Exception ex)//catch Error from Datenbank
-            // //{
-            // //    //MessageBox.Show(ex.Message);
-            // //    MessageBox.Show("Not exists in WordList. You should create new one!");
-            // //}
-
         }
         #endregion
 
@@ -178,7 +137,7 @@ namespace PersonalDictionary
             string viet = txbMean.Text;
             string germ = Column.German.ToString();
             string detail = Column.VNLong.ToString();
-            DataTable re = cs.SearchVNFromGerman(TableProcedure.Lookup_back.ToString(), viet, germ);
+            DataTable re = cs.SearchVNFromGerman(SQLdata.sql,TableProcedure.Lookup_back.ToString(),viet);
             try
             {
                 if (re != null)
@@ -198,26 +157,6 @@ namespace PersonalDictionary
                 MessageBox.Show("System Error!");
             }
            
-            //try
-            //{
-            //    string mean = txbMean.Text;
-            //    // gefundene Wort wurde in einem temperatoren Table und in Textbox anzeigen
-            //    DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_back", mean).Tables[0];
-            //    // testen, ob diese Worte in Datenbank existiert
-            //    if (dt.Rows.Count > 0)
-            //    {
-            //        txbSearch.Text = dt.Rows[0]["German"].ToString();
-            //        txbDetail.Text = dt.Rows[0]["VNLong"].ToString();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Not exists in WordList. You should create new one!");
-            //    }
-            //}
-            //catch (Exception ex)//catch Error from System
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
         #endregion
         /*Wenn User im Textbox klickt, werden passenden Button erleuchten 

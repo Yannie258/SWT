@@ -11,7 +11,7 @@ namespace PersonalDictionary.Model
     //Manage fuer Seach Modus
     public class DictionarySearchModel : DictionaryDataManagementBase
     {
-       
+        
 
         public DictionarySearchModel() { }
         public DictionarySearchModel(string german, string mean, string detail)
@@ -33,10 +33,10 @@ namespace PersonalDictionary.Model
          * load Data from Database in Store Procedure "select_dict"
         * */
 
-        public override DataTable  Load_data()
+        public override DataTable Load_data()
         {
             DataTable re;
-            
+
             string tp = TableProcedure.select_dict.ToString();
             //alle Daten  in Temperate DataTable re abgespeichert.
             // public static DataSet ExecuteDataset(string connectionString, string spName, params object[] parameterValues);
@@ -66,9 +66,9 @@ namespace PersonalDictionary.Model
         /*Suchen  Wortsbedeutung und Wortserklärung nach Procedure
          * */
 
-        public override DataTable Search(string table, string searchLetter,string columnFound)
+        public override DataTable Search(string sql, string table,string columnFound)
         {
-            DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, table, searchLetter).Tables[0];
+            DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, table, columnFound).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt;
