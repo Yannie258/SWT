@@ -71,7 +71,6 @@
     <Compile Include="Model\DictionaryDataManagementBase.cs" />
     <Compile Include="Model\DictionarySearchModel.cs" />
     <Compile Include="Model\IDataAccess.cs" />
-    <Compile Include="Model\IDataDictionary.cs" />
     <Compile Include="Model\ILogin.cs" />
     <Compile Include="Model\LoginModels.cs" />
     <Compile Include="Model\SpeakText.cs" />

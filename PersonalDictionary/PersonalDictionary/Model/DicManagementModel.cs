@@ -12,8 +12,7 @@ namespace PersonalDictionary.Model
     {
         public int Id { get; set; }
        
-        public string VNShort { get; set; }
-        public string VNLong { get; set; }
+       
 
         public DicManagementModel() { }
 
@@ -21,8 +20,8 @@ namespace PersonalDictionary.Model
         {
             this.Id = id;
             this.German = german;
-            this.VNShort = vnShort;
-            this.VNLong = vnLong;
+            this.Mean = vnShort;
+            this.Detail = vnLong;
         }
 
         public override DataTable Load_data()

@@ -66,9 +66,9 @@ namespace PersonalDictionary.Model
         /*Suchen  Wortsbedeutung und Wortserklärung nach Procedure
          * */
 
-        public override DataTable Search(string sql, string table,string columnFound)
+        public override DataTable Search(string sql, string table,string word)
         {
-            DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, table, columnFound).Tables[0];
+            DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, table, word).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt;

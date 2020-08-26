@@ -21,9 +21,9 @@ namespace PersonalDictionary.Controller
             return dmm.Load_to_TextBox(german);
         }
        
-        public DataTable Search(string table, string searchLetter, string columnFound)
+        public DataTable Search(string sql, string sp, string word)
         {
-            return dmm.Search(table, searchLetter, columnFound);
+            return dmm.Search(sql, sp, word);
         }
         //public void AddToDB(int ID, string German, string Mean, string Detail)
         //{

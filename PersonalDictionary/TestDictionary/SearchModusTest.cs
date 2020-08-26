@@ -45,7 +45,7 @@ namespace TestDictionary
         public void SearchGermanToVN()
         {
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", "Danke").Tables[0];
-            DataTable dt = dsm.Search("Lookup_dict","Danke", "VNShort");
+            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_dict","Danke");
             Assert.AreEqual(1, dt.Rows.Count);
         }
         [Test]
@@ -59,14 +59,14 @@ namespace TestDictionary
         public void SearchVNToGerman()
         {
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", "Danke").Tables[0];
-            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_back", "Xin chào");
-            Assert.IsNull(dt);
+            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_back", "Cảm ơn");
+            Assert.AreEqual(1, dt.Rows.Count);
         }
         [Test]
         public void NotFoundVNToGerman()
         {
             //DataTable dt = SqlHelper.SqlHelper.ExecuteDataset(SQLdata.sql, "Lookup_dict", "Danke").Tables[0];
-            DataTable dt = dsm.Search("Lookup_back", "Xinh", "German");
+            DataTable dt = dsm.Search(SQLdata.sql,"Lookup_back", "kalter");
             Assert.IsNull(dt);
         }
 

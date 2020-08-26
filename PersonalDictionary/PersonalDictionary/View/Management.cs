@@ -79,7 +79,7 @@ namespace PersonalDictionary
                 //Add ID, German, Mean and DetailMeaning
                 
                 //Wenn ein Word in Deutsch existiert , gibt Nachricht aus
-                DataTable dt = cm.Search(TableProcedure.Lookup_dict.ToString(), german, Column.VNShort.ToString());
+                DataTable dt = cm.Search(SQLdata.sql,TableProcedure.Lookup_dict.ToString(), german);
                 if (dt != null)
                 {
                     MessageBox.Show("This Word exists");
